@@ -1,55 +1,35 @@
-# Prerequisites
-*.d
+#include<stdio.h>
+#include<math.h>
+void ptb1(double a, double b){
+double x;
+if(a!=0){
+x = -b/(a);
+printf("%.2f",x);
+}
+else{
+if(b==0){printf("VSN");}
+else printf("VN");
+}}
+void ptb2(double a, double b,double c){
+double dealta ;
+double x1, x2;
+if(a==0){ptb1(b,c);}
+if(a!=0){
+dealta = b*b-a*4*c;
+if(dealta<0) printf("VN");
+if(dealta==0) printf("%.2f", (double)-b /(2*a) );
+if(dealta>0){
+x1= (sqrt(dealta) - b)/(2*a);
+x1= (-sqrt(dealta) - b)/(2*a);
+printf("%.2f %.2f",x1 ,x2);
+}
+}
+}
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+int main(){
+double a,b,c;
+scanf("%f%f%f",&a,&b,&c);
+ptb2(a,b,c);
+}
 
-# Linker output
-*.ilk
-*.map
-*.exp
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-
-# debug information files
-*.dwo
