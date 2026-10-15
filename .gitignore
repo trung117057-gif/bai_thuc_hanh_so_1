@@ -1,6 +1,6 @@
 #include<stdio.h>
-
-void ptb1(int a, int b){
+#include<math.h>
+void ptb1(double a, double b){
 double x;
 if(a!=0){
 x = -b/(a);
@@ -10,14 +10,14 @@ else{
 if(b==0){printf("VSN");}
 else printf("VN");
 }}
-void ptb2(int a, int b,int c){
+void ptb2(double a, double b,double c){
 double dealta ;
 double x1, x2;
-if(a==0){ptb1(b,c)};
+if(a==0){ptb1(b,c);}
 if(a!=0){
 dealta = b*b-a*4*c;
 if(dealta<0) printf("VN");
-if(dealta==0) printf("%.2f",-b/2a);
+if(dealta==0) printf("%.2f", (double)-b /(2*a) );
 if(dealta>0){
 x1= (sqrt(dealta) - b)/(2*a);
 x1= (-sqrt(dealta) - b)/(2*a);
@@ -29,6 +29,7 @@ printf("%.2f %.2f",x1 ,x2);
 int main(){
 double a,b,c;
 scanf("%f%f%f",&a,&b,&c);
-ptb2(a.b.c);
+ptb2(a,b,c);
 }
+
 
