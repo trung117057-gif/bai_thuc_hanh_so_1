@@ -1,55 +1,30 @@
-# Prerequisites
-*.d
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+#include <stdio.h>
 
-# Linker output
-*.ilk
-*.map
-*.exp
 
-# Precompiled Headers
-*.gch
-*.pch
+void int ucln(int a, int b) {
+    while (b != 0) {
+        int r = a % b;
+        a = b;
+        b = r;
+    }
+    return a;
+}
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+ void int bcnn( int a,int  b) {
+    if (a == 0 || b == 0) return 0;
+    return (a * b) / ucln(a, b);
+}
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
-
-# debug information files
-*.dwo
+int main() {
+    int a, b;
+    printf("Nhap vao hai so nguyen dương a và b: ");
+    if (scanf("%d %d", &a, &b) == 2 && a > 0 && b > 0) {
+       int kq = bcnn(a, b);
+        printf("Boi chung nho nhat của %d va %d là: %d\n", a, b, kq);
+    } else {
+        printf("Vui long nhap hai so nguyen duong hop le!\n");
+    }
+    return 0;
+}
